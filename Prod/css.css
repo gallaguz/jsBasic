@@ -1,0 +1,21 @@
+#container {
+    margin: 0 auto;
+    width: 300px;
+}
+#catalog {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product {
+    color: grey;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: 300px;
+}
+.product:hover {
+    color: black;
+    background-color: #a4a4a4;
+}
