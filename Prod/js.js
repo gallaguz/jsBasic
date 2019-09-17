@@ -43,7 +43,7 @@ const cart = {
         if (this.getCount() === 0) {
             elem.innerHTML = 'Корзина пуста';
         } else {
-            elem.innerHTML = 'В корзине : ' + this.getCount() + ' товаров, на: ' + this.getAmount() + ' рублей';
+            elem.innerHTML = 'В корзине : ' + this.getCount() + ' товаров, на сумму: ' + this.getAmount() + ' рублей';
         }
     }
 }
