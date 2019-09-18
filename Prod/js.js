@@ -12,16 +12,18 @@ const Product = {
         {   id : "00010", product_name: "Prod 10", price: 857  }
     ],
     createList () {
-        for (let prop of this.items) {
+        this.items.forEach((elem) => {
             let parentElem = document.getElementById("catalog");
-            const elem = document.createElement('div');
-            elem.setAttribute("id", prop.id);
-            elem.setAttribute("class", "product");
-            elem.innerHTML = 'Название: ' + prop.product_name + ', цена: ' + prop.price + ' рублей';
-            parentElem.appendChild(elem);
-        }
+            const element = document.createElement('div');
+            //element.setAttribute("id", elem.id);
+            element.setAttribute("class", "product");
+            element.innerHTML = 'Название: ' + elem.product_name
+                + ', цена: ' + elem.price + ' рублей.'
+                + '<input type="button" value="Купить" id="' + elem.id + '">';
+            parentElem.appendChild(element);
+        })
     }
-}
+};
 
 const cart = {
     items: [],
@@ -43,19 +45,19 @@ const cart = {
         if (this.getCount() === 0) {
             elem.innerHTML = 'Корзина пуста';
         } else {
-            elem.innerHTML = 'В корзине : ' + this.getCount() + ' товаров, на сумму: ' + this.getAmount() + ' рублей';
+            elem.innerHTML = 'В корзине : ' + this.getCount() + ' товаров, на: ' + this.getAmount() + ' рублей';
         }
     }
-}
+};
 
 document.onclick = function (event) {
-    if (event.target.className === 'product') {
+    console.log (event);
+    if (event.target.tagName === 'INPUT') {
         let item = Product.items.find(item => item.id === event.target.id);
         cart.insertItem(item);
         cart.createCart();
     }
-}
+};
 
 cart.createCart();
 Product.createList ();
-

@@ -1,6 +1,6 @@
 #container {
     margin: 0 auto;
-    width: 300px;
+    width: 1000px;
 }
 #catalog {
     display: flex;
@@ -13,8 +13,9 @@
     cursor: pointer;
     padding: 5px;
     margin: 5px;
-    width: 300px;
+    width: 400px;
 }
+
 .product:hover {
     color: black;
     background-color: #a4a4a4;
